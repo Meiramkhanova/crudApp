@@ -6,9 +6,19 @@ import TaskList from "./components/TaskList";
 function App() {
   return (
     <TasksProvider>
-      <h1>CRUD APP</h1>
-      <AddTask />
-      <TaskList />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          paddingTop: "50px",
+        }}
+      >
+        <h1>CRUD APP with Reducer and Context</h1>
+        <AddTask />
+        <TaskList />
+      </div>
     </TasksProvider>
   );
 }

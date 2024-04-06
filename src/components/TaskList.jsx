@@ -24,7 +24,7 @@ function Task({ task }) {
   let taskContent;
   if (isEditing) {
     taskContent = (
-      <Box>
+      <>
         <TextField
           value={task.text}
           onChange={(e) => {
@@ -40,21 +40,31 @@ function Task({ task }) {
           label="Add Task"
           variant="outlined"
         />
-        <Button onClick={() => setIsEditing(false)} variant="contained">
+        <Button
+          onClick={() => setIsEditing(false)}
+          variant="contained"
+          sx={{ margin: "5px" }}
+        >
           Save
         </Button>
-      </Box>
+      </>
     );
   } else {
     taskContent = (
       <Box>
         {task.text}
-        <Button onClick={() => setIsEditing(true)}>Edit</Button>
+        <Button
+          onClick={() => setIsEditing(true)}
+          variant="contained"
+          sx={{ margin: "5px", marginLeft: "20px" }}
+        >
+          Edit
+        </Button>
       </Box>
     );
   }
   return (
-    <label>
+    <label style={{ display: "flex" }}>
       <input
         type="checkbox"
         checked={task.done}
@@ -76,6 +86,8 @@ function Task({ task }) {
             id: task.id,
           });
         }}
+        variant="contained"
+        sx={{ margin: "5px" }}
       >
         Delete
       </Button>
